@@ -10,8 +10,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '.up.railway.app',  # для Railway
-    '0.0.0.0',          # для некоторых серверов
+    '.up.railway.app',  
+    '0.0.0.0',          
 ]
 
 INSTALLED_APPS = [
@@ -82,3 +82,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.up.railway.app',
+    'https://nlo-shop-production.up.railway.app',
+]
