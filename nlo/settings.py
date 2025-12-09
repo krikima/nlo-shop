@@ -7,7 +7,12 @@ SECRET_KEY = 'django-insecure-1234567890'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['.up.railway.app', 'localhost']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '.up.railway.app',  # для Railway
+    '0.0.0.0',          # для некоторых серверов
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
