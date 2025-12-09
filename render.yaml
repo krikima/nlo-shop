@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: nlo-shop
+    runtime: python
+    env: production
+    plan: free
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn nlo.wsgi:application"
+    envVars:
+      - key: DEBUG
+        value: False
+      - key: i+o^+b9-!&i0a$c5)k=&42j94+rtau_c=$f#s&$$7+oxmf-^+$: "django-insecure-ваш-секрет-ключ-здесь-1234567890"
+      - key: ALLOWED_HOSTS
+        value: "*.onrender.com,localhost,127.0.0.1"
+      - key: TELEGRAM_BOT_TOKEN
+        value: "8463666520:AAEjAPMy4642gIabaNZiL22aBkiCt-xJOdM"
+      - key: TELEGRAM_CHAT_ID
+        value: "1487359914"
+    healthCheckPath: /

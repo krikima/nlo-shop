@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Оформление заказа</h2>
+<form method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label>Имя</label>
+    <input type="text" name="first_name" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label>Телефон</label>
+    <input type="text" name="phone" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label>Ваш Telegram (@username)</label>
+    <input type="text" name="telegram_username" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label>Тип получения</label>
+    <select name="delivery_type" class="form-control" id="delivery_type">
+      <option value="pickup">Самовывоз (Новопышминское)</option>
+      <option value="delivery">Доставка (+100₽)</option>
+    </select>
+  </div>
+
+  <div id="address_field" class="mb-3" style="display: none;">
+    <label>Адрес доставки</label>
+    <input type="text" name="address" class="form-control" placeholder="ул. Ленина, д. 5, кв. 10">
+  </div>
+
+  <p><strong>К оплате:</strong> {{ final_total }}₽</p>
+  <p><strong>Реквизиты для оплаты:</strong> Сбер 2202 2001 1234 5678 (Иванов И.И.)</p>
+
+  <button type="submit" class="btn btn-neon">Подтвердить заказ</button>
+</form>
+
+<script>
+document.getElementById('delivery_type').addEventListener('change', function() {
+  document.getElementById('address_field').style.display = this.value === 'delivery' ? 'block' : 'none';
+});
+</script>
+{% endblock %}

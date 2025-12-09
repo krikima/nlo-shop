@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center py-5">
+  <h2>Заказ №{{ order.id }} оформлен!</h2>
+  <p>Переведите <strong>{{ order.total_price }}₽</strong> на Сбер: <code>2202 2001 1234 5678</code></p>
+
+  <div class="alert alert-info mt-4">
+    <p>После оплаты:</p>
+    <ol class="text-start">
+      <li>Сделайте скриншот чека</li>
+      <li>Напишите нам в Telegram: <a href="https://t.me/@spank46">@spank46</a></li>
+      <li>Отправьте номер заказа и скрин</li>
+    </ol>
+    <p>Мы проверим и подтвердим доставку!</p>
+  </div>
+
+  <a href="/" class="btn btn-outline-light mt-3">На главную</a>
+</div>
+{% endblock %}

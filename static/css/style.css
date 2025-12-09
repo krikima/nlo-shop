@@ -1,0 +1,42 @@
+body {
+  background: #121212;
+  color: #f0f0f0;
+}
+.card {
+  background: #1e1e1e;
+  border: none;
+  color: #fff;
+}
+.alert-success {
+  background: #00e1ff;
+  color: black;
+  border: none;
+}
+.alert-error {
+  background: #ff3366;
+  color: white;
+}
+
+.btn-neon {
+  background: #00e1ff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-neon:hover {
+  background: #00b8cc;
+  transform: scale(1.05);
+}
+
+.btn-outline-light {
+  border-color: #f0f0f0;
+  color: #f0f0f0;
+  transition: all 0.2s;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #aaa;
+}
